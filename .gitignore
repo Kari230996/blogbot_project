@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.log
+*.sqlite3
+*.db
+
+# Виртуальное окружение
+venv/
+env/
+.venv/
+.env/
+
+# Секреты
+.env
+.env.*
+
+
+# Кэш 
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+
+# Разное
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+
+
