@@ -4,8 +4,11 @@ from ninja.security import HttpBearer
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 from ninja.responses import Response
+from django.contrib.auth import authenticate
+
 from .models import Post
 from .schemas import PostSchema, PostInSchema
+
 
 router = Router()
 
@@ -32,7 +35,6 @@ class TokenSchema(Schema):
 
 @router.post("/login", response=TokenSchema)
 def login(request, data: LoginSchema):
-    from django.contrib.auth import authenticate
     user = authenticate(username=data.username, password=data.password)
     if user:
         token, _ = Token.objects.get_or_create(user=user)
